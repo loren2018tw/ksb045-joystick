@@ -24,9 +24,9 @@ basic.forever(function () {
     x軸引腳值 = pins.analogReadPin(AnalogPin.P2)
     y引腳值 = pins.analogReadPin(AnalogPin.P1)
     搖桿區間判斷()
-    if (pins.digitalReadPin(DigitalPin.P5) == 1) {
+    if (pins.digitalReadPin(DigitalPin.P5) == 0) {
         radio.sendString("A")
-    } else if (pins.digitalReadPin(DigitalPin.P11) == 1) {
+    } else if (pins.digitalReadPin(DigitalPin.P11) == 0) {
         radio.sendString("B")
     } else if (x區間碼 == 0 && y區間碼 == 2) {
         radio.sendString("右後")
