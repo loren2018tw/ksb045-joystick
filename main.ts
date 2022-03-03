@@ -24,11 +24,7 @@ basic.forever(function () {
     x軸引腳值 = pins.analogReadPin(AnalogPin.P2)
     y引腳值 = pins.analogReadPin(AnalogPin.P1)
     搖桿區間判斷()
-    if (pins.digitalReadPin(DigitalPin.P5) == 0) {
-        radio.sendString("A")
-    } else if (pins.digitalReadPin(DigitalPin.P11) == 0) {
-        radio.sendString("B")
-    } else if (x區間碼 == 0 && y區間碼 == 2) {
+    if (x區間碼 == 0 && y區間碼 == 2) {
         radio.sendString("右後")
     } else if (x區間碼 == 1 && y區間碼 == 0) {
         radio.sendString("前進")
@@ -46,9 +42,20 @@ basic.forever(function () {
         radio.sendString("右前")
     } else if (x區間碼 == 0 && y區間碼 == 1) {
         radio.sendString("右轉")
-    } else if (false) {
-    	
-    } else {
-    	
+    }
+    if (pins.digitalReadPin(DigitalPin.P5) == 0) {
+        radio.sendString("A")
+    } else if (pins.digitalReadPin(DigitalPin.P11) == 0) {
+        radio.sendString("B")
+    } else if (pins.digitalReadPin(DigitalPin.P15) == 0) {
+        radio.sendString("C")
+    } else if (pins.digitalReadPin(DigitalPin.P14) == 0) {
+        radio.sendString("D")
+    } else if (pins.digitalReadPin(DigitalPin.P13) == 0) {
+        radio.sendString("E")
+    } else if (pins.digitalReadPin(DigitalPin.P12) == 0) {
+        radio.sendString("F")
+    } else if (pins.digitalReadPin(DigitalPin.P8) == 0) {
+        radio.sendString("P")
     }
 })
